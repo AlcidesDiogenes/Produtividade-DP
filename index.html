@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Primeiro projeto JS</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Primeiro projeto JS</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body class="background">
-   
-    <h1 id="tituloindex">Praticidades do DP</h1>
 
-    <div class="botoes" id="botoesindex">
-        <button onclick="window.location.href =('abas/certidoes.html')"id="certidoes">Certidões</button>
-        <button onclick="window.location.href =('abas/boletossindicais.html')" id="sindicatos">Boletos Sindicais</button>
-        <button onclick="window.location.href =('abas/calculos.html')" id="ferias">Calculos</button>
-    </div>   
+  <!-- 1.1. Título da página -->
+  <h1 id="tituloindex">Praticidades do DP</h1>
 
-    <script src="script.js"></script> 
+  <!-- 1.2. Botões principais -->
+  <div class="botoes" id="botoesindex">
+    <button id="certidoes">Certidões</button>
+    <button id="sindicatos">Sindicatos</button>
+    <button id="calculos">Cálculos</button>
+  </div>
+
+  <!-- 1.3. Container vazio para botões extras -->
+  <div class="botoes" id="btnAtv1"></div>
+
+  <!-- 1.4. Inclusão do script que faz toda a mágica -->
+  <script src="script.js"></script>
 </body>
 </html>
