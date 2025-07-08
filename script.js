@@ -1,59 +1,46 @@
-function selectById(id){
-  return document.getElementById(id); 
-}
+import { openLink, creatbtn } from './utils.js';
 
-function creatbtn(id, texto) {
-  const btn = document.createElement('button');
-  btn.id = id;
-  btn.textContent = texto;
-  return btn;
-}
+const btncertidoes = document.getElementById('certidoes');
+const btnsindicatos = document.getElementById('sindicatos');
+const btnAtv1 = document.getElementById('btnAtv1');
 
-function openLink(btn, url) {
-  btn.addEventListener('click', () => {
-    window.open(url, '_blank');
-  });
-  return btn;
-}
+function ativarcertdioes() {
+  const btnCPF = document.getElementById('btnCPF');
+  const btnCNPJ = document.getElementById('btnCNPJ');
 
-// 2.1. Captura referências dos elementos já existenten na página
-
-// Indentificação dos botões
-const btnCertidoes = selectById('certidoes');
-const btnSindicatos = selectById('sindicatos');
-const btnCalculos = selectById('calculos');
-
-// Indificação a parte a onde deve ser adicionado
-const btnAtv = selectById('btnAtv1');
-
-// 2.2. Função que “liga/desliga” o botão extra
-function toggleBotaocertidoes() {
-  // 2.2.1. Tenta achar, no DOM, um elemento com id="btnCPF"
-  const tembtnCPF = selectById('btnCPF');
-  const tembtnCNPJ = selectById('btnCNPJ');
-
-  if (tembtnCPF) {
-    // 2.2.2. Se já existe: remove do container
-    btnAtv.removeChild(tembtnCPF) ;
-    btnAtv.removeChild(tembtnCNPJ);
-
+  if (btnCPF && btnCNPJ) {
+    btnCPF.remove();
+    btnCNPJ.remove();
   } else {
-    // 2.2.3. Se não existe: cria um novo botão
+    const novobtnCPF = creatbtn('btnCPF', 'CPF');
+    const novobtnCNPJ = creatbtn('btnCNPJ', 'CNPJ');
 
-    const cpf = creatbtn('btnCPF', 'Consultar CPF');
-    const cnpj = creatbtn('btnCNPJ', 'Consultar CNPJ');
+    openLink(novobtnCPF, 'https://servicos.receita.fazenda.gov.br/servicos/cpf/consultasituacao/consultapublica.asp');
+    openLink(novobtnCNPJ, 'https://solucoes.receita.fazenda.gov.br/servicos/cnpjreva/cnpjreva_solicitacao.asp');
 
-    // 2.2.4. Define o clique desse botão recém-criado
-    
-    openLink(cpf, 'https://servicos.receita.fazenda.gov.br/servicos/cpf/consultasituacao/consultapublica.asp')
-    openLink(cnpj, 'https://solucoes.receita.fazenda.gov.br/servicos/cnpjreva/cnpjreva_solicitacao.asp')
- 
-    // 2.2.5. Insere o botão criado dentro do <div id="extrasCertidoes">
-    btnAtv.append(cpf, cnpj);
+    btnAtv1.appendChild(novobtnCPF);
+    btnAtv1.appendChild(novobtnCNPJ);
   }
 }
 
+function ativarsindicatos() {
+  const btnsindicam = document.getElementById('btnsindicam');
+  const btncomerciof = document.getElementById('btncomerciof');
 
-// 2.3. Associa a ação de clique do “Certidões” ao toggleBotaocertidoes
-btnCertidoes.addEventListener('click', toggleBotaocertidoes);
+  if (btnsindicam && btncomerciof) {
+    btnsindicam.remove();
+    btncomerciof.remove();
+  } else {
+    const novobtncomerciof = creatbtn('btncomerciof', 'Comércio Fortaleza');
+    const novobtnsindicam = creatbtn('btnsindicam', 'Sindicato dos Caminhoneiros');
 
+    openLink(novobtncomerciof, 'https://comerciofortaleza.exemplo.com');
+    openLink(novobtnsindicam, 'https://sindicam.exemplo.com');
+
+    btnAtv1.appendChild(novobtncomerciof);
+    btnAtv1.appendChild(novobtnsindicam);
+  }
+}
+
+btncertidoes.addEventListener('click', ativarcertdioes);
+btnsindicatos.addEventListener('click', ativarsindicatos);
