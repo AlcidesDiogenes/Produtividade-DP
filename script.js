@@ -1,36 +1,30 @@
-import { openLink, creatbtn } from './utils.js';
+import { openLink, creatbtn, selectById, limparBotoes} from './utils.js';
 
-const btncertidoes = document.getElementById('certidoes');
-const btnsindicatos = document.getElementById('sindicatos');
-const btnAtv1 = document.getElementById('btnAtv1');
+const btnCertidoes = selectById('certidoes');
+const btnSindicatos = selectById('sindicatos');
+const btnAtv1 = selectById('btnAtv1');
 
-function ativarcertdioes() {
-  const btnCPF = document.getElementById('btnCPF');
-  const btnCNPJ = document.getElementById('btnCNPJ');
+let grupoAtivo = null;
 
-  if (btnCPF && btnCNPJ) {
-    btnCPF.remove();
-    btnCNPJ.remove();
-  } else {
-    const novobtnCPF = creatbtn('btnCPF', 'CPF');
-    const novobtnCNPJ = creatbtn('btnCNPJ', 'CNPJ');
+function mostrarCertidoes() {
+  limparBotoes(btnAtv1);
+  grupoAtivo = 'certidoes';
 
-    openLink(novobtnCPF, 'https://servicos.receita.fazenda.gov.br/servicos/cpf/consultasituacao/consultapublica.asp');
-    openLink(novobtnCNPJ, 'https://solucoes.receita.fazenda.gov.br/servicos/cnpjreva/cnpjreva_solicitacao.asp');
+  const novobtnCPF = creatbtn('btnCPF', 'CPF');
+  const novobtnCNPJ = creatbtn('btnCNPJ', 'CNPJ');
 
-    btnAtv1.appendChild(novobtnCPF);
-    btnAtv1.appendChild(novobtnCNPJ);
+  openLink(novobtnCPF, 'https://servicos.receita.fazenda.gov.br/servicos/cpf/consultasituacao/consultapublica.asp');
+  openLink(novobtnCNPJ, 'https://solucoes.receita.fazenda.gov.br/servicos/cnpjreva/cnpjreva_solicitacao.asp');
+
+  btnAtv1.appendChild(novobtnCPF);
+  btnAtv1.appendChild(novobtnCNPJ);
   }
-}
 
-function ativarsindicatos() {
-  const btnsindicam = document.getElementById('btnsindicam');
-  const btncomerciof = document.getElementById('btncomerciof');
 
-  if (btnsindicam && btncomerciof) {
-    btnsindicam.remove();
-    btncomerciof.remove();
-  } else {
+function mostrarSindicatos() {
+  limparBotoes(btnAtv1);
+  grupoAtivo = 'sindicatos';
+
     const novobtncomerciof = creatbtn('btncomerciof', 'Comércio Fortaleza');
     const novobtnsindicam = creatbtn('btnsindicam', 'Sindicato dos Caminhoneiros');
 
@@ -40,7 +34,21 @@ function ativarsindicatos() {
     btnAtv1.appendChild(novobtncomerciof);
     btnAtv1.appendChild(novobtnsindicam);
   }
-}
 
-btncertidoes.addEventListener('click', ativarcertdioes);
-btnsindicatos.addEventListener('click', ativarsindicatos);
+btnCertidoes.addEventListener('click', () => {
+  if (grupoAtivo === 'certidoes') {
+    limparBotoes(btnAtv1);
+    grupoAtivo = null;
+  } else {
+    mostrarCertidoes();
+  }
+});
+
+btnSindicatos.addEventListener('click', () => {
+  if (grupoAtivo === 'sindicatos') {
+    limparBotoes(btnAtv1);
+    grupoAtivo = null;
+  } else {
+    mostrarSindicatos();
+  }
+});

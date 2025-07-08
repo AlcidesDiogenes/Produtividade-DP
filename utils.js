@@ -15,3 +15,7 @@ export function openLink(btn, url) {
   });
   return btn;
 }
+
+export function limparBotoes(conteiner) {
+  conteiner.innerHTML = '';
+}
