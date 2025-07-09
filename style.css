@@ -9,6 +9,6 @@ header {
 
 .container {
   display: flex;
-  padding: auto;
+  padding: 40px;
 
 }
