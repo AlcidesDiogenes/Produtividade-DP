@@ -11,3 +11,8 @@ header {
   display: flex;
 
 }
+
+main {
+  padding: 10px;
+  flex-direction: center;
+}
