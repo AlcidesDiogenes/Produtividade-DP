@@ -1,5 +1,13 @@
 h1 {
   text-align: center;
-
 }
 
+header {
+  background-color: #c3cbd2;
+  padding: 10px;
+}
+
+.container {
+  display: flex;
+
+}
