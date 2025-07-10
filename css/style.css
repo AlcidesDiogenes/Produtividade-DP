@@ -1,3 +1,6 @@
+@import url(nav.css);
+
+
 h1 {
   text-align: center;
 }
@@ -13,6 +16,8 @@ header {
 }
 
 main {
-  padding: 10px;
-  flex-direction: center;
+  
+  flex: 1;
+  text-align: center;
 }
+

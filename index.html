@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./css/style.css">
 
   <title>Produtividade DP</title>
 </head>
@@ -21,11 +21,38 @@
         <li><a href="sobre.html">Sobre</a></li>
       </ul>
 
-      <ul>
-        <li><a href="https://servicos.receita.fazenda.gov.br/servicos/cpf/consultasituacao/consultapublica.asp">CPF</a> </li>
-        <li><a href="https://solucoes.receita.fazenda.gov.br/servicos/cnpjreva/cnpjreva_solicitacao.asp">CNPJ</a> </li>
-        <li><a href="https://www8.receita.fazenda.gov.br/simplesnacional/aplicacoes.aspx?id=21">Simples Nacional</a> </li>
-      </ul>
+      <div>
+        <button id="botao-certidoes">Certidões</button>
+        <ul id="lista-certidoes" class="escondido">
+          <li><a href="https://servicos.receita.fazenda.gov.br/servicos/cpf/consultasituacao/consultapublica.asp" target="_blank">CPF</a></li>
+          <li><a href="https://solucoes.receita.fazenda.gov.br/servicos/cnpjreva/cnpjreva_solicitacao.asp" target="_blank">CNPJ</a></li>
+          <li><a href="https://www8.receita.fazenda.gov.br/simplesnacional/aplicacoes.aspx?id=21" target="_blank">Simples Nacional</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <button id="botao-governo">Sites Governamentais</button>
+        <ul id="lista-governamentais" class="escondido">
+          <li><a href="https://cav.receita.fazenda.gov.br/autenticacao/login" target="_blank">eCac</a></li>
+          <li><a href="https://fgtsdigital.sistema.gov.br/portal/login" target="_blank">FGTS Digital</a></li>
+          <li><a href="https://conectividadesocialv2.caixa.gov.br/sicns/" target="_blank">Conectividade Social V2</a></li>
+          <li><a href="https://login.esocial.gov.br/login.aspx" target="_blank">eSocial</a></li>
+          <li><a href="https://sd.maisemprego.mte.gov.br/sdweb/empregadorweb/" target="_blank">Empregador Web</a></li>
+          <li><a href="https://servicos.mte.gov.br/empregador/#/login" target="_blank">Emprega Brasil</a></li>
+          <li><a href="https://det.sit.trabalho.gov.br/login?r=%2Fservicos" target="_blank">DET</a></li>
+          <li><a href="https://servicos.receitafederal.gov.br/home" target="_blank">Serviços do Gov</a></li>
+          <li><a href="https://www3.mte.gov.br/sistemas/mediador/ConsultarInstColetivo" target="_blank">Mediador</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <button id="calculos">Calculos</button>
+        <ul id="lista-calculos" class ="escondido">
+          <li><a href="#" id="link-inss">INSS</a></li>
+          <li>>Imposto de Renda</a></li>
+          <li>>Férias</a></li>
+        </ul>
+
     </nav>
     
     <main>
@@ -39,6 +66,8 @@
   <footer>
     <p>&copy; 2025 Produtividade DP. Todos os direitos reservados.</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
 
