@@ -1,162 +1,324 @@
-@import url(nav.css);
-
-
-h1 {
-  text-align: center;
+/* RESET BÁSICO */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+/* GERAL */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f7fb;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* CABEÇALHO */
 header {
-  background-color: #c3cbd2;
-  padding: 10px;
+  background-color: #004aad;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
+header h1 {
+  font-size: 1.8rem;
+}
+
+/* LAYOUT GERAL */
 .container {
   display: flex;
-
-}
-
-main {
-  
-  flex: 1;
-  text-align: center;
-}
-
-/* Layout geral */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
-  margin: 0;
+  flex-direction: row;
+  gap: 20px;
   padding: 20px;
-  color: #333;
 }
 
+/* NAVEGAÇÃO */
+nav {
+  width: 250px;
+  background-color: #fff;
+  border-right: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.05);
+}
+
+nav ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+nav li {
+  margin-bottom: 10px;
+}
+
+nav button {
+  width: 100%;
+  padding: 10px;
+  background: #e7efff;
+  color: #004aad;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.3s;
+}
+
+nav button:hover {
+  background-color: #d0e4ff;
+}
+
+nav a,
+nav a:visited {
+  color: #004aad;
+  text-decoration: none;
+}
+
+nav a:hover {
+  background-color: #e7efff;
+  border-radius: 4px;
+  padding-left: 5px;
+}
+
+nav ul ul {
+  margin-top: 5px;
+  padding-left: 15px;
+}
+
+nav ul ul li {
+  margin-bottom: 8px;
+}
+
+nav ul ul li a {
+  display: block;
+  font-size: 0.95rem;
+  padding: 6px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+/* ESCONDER SUBMENUS */
+.escondido {
+  display: none;
+}
+
+/* CONTEÚDO PRINCIPAL */
 main {
-  max-width: 900px;
-  margin: 0 auto;
+  flex: 1;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.05);
 }
 
-/* Tabelas lado a lado */
-.tabelas-lado-a-lado {
+/* TÍTULOS */
+main h2 {
+  margin-bottom: 20px;
+  color: #004aad;
+}
+
+main h3 {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  color: #004aad;
+}
+
+/* FORMULÁRIOS */
+form {
+  margin-top: 20px;
+}
+
+form .linha {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
-.tabela {
+form .campo {
   flex: 1;
-  min-width: 300px;
+  min-width: 220px;
 }
 
+form label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: block;
+}
+
+form input, form select {
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+form button {
+  padding: 10px 20px;
+  background-color: #004aad;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+form button:hover {
+  background-color: #003380;
+}
+
+/* BLOCOS DE RESULTADO */
+.resultado-linha {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.resumo-box {
+  flex: 1;
+  min-width: 250px;
+  background: #fdfdfd;
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.resumo-box h4 {
+  margin-top: 0;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+  color: #004aad;
+}
+
+.resumo-box.destaque {
+  background: #eafbe8;
+  border-color: #91d291;
+}
+
+/* TABELAS */
 table {
   width: 100%;
   border-collapse: collapse;
-  background-color: #fff;
-  border: 1px solid #ccc;
+  margin-top: 20px;
 }
 
-th, td {
+table th, table td {
   border: 1px solid #ccc;
   padding: 10px;
   text-align: left;
 }
 
 thead {
-  background-color: #f0f0f0;
+  background-color: #f0f4ff;
   font-weight: bold;
 }
 
-/* Formulário */
-form {
-  background-color: #fff;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-}
-
-form label {
-  font-weight: bold;
-  display: block;
-  margin-top: 15px;
-}
-
-form input,
-form select,
-form button {
-  width: 100%;
-  padding: 8px;
-  margin-top: 5px;
-  font-size: 16px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
-
-form button {
-  background-color: #004aad;
-  color: white;
-  font-weight: bold;
-  margin-top: 20px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-form button:hover {
-  background-color: #003080;
-}
-
-/* Resultado */
-#resultado-final {
-  margin-top: 30px;
-  background-color: #eaf4ff;
-  padding: 20px;
-  border-left: 4px solid #004aad;
-  border-radius: 5px;
-}
-
-.linha {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin-bottom: 15px;
-}
-
-.campo {
-  flex: 1;
-  min-width: 200px;
-}
-  
-.blocos-lado-a-lado {
+/* TABELAS LADO A LADO */
+.tabelas-lado-a-lado {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   margin-top: 20px;
 }
 
-.card {
+.tabelas-lado-a-lado .tabela {
   flex: 1;
-  min-width: 250px;
-  background: #f4f4f4;
-  border: 1px solid #ccc;
-  padding: 20px;
-  border-radius: 8px;
+  min-width: 280px;
 }
 
-.resultado-linha {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  margin-top: 30px;
-  flex-wrap: wrap;
-}
-
-.resumo-box {
-  flex: 1;
-  min-width: 200px;
-  background: #f8f8f8;
-  border: 1px solid #ccc;
-  padding: 15px;
+/* RODAPÉ */
+footer {
   text-align: center;
-  border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  padding: 20px;
+  color: #777;
+  font-size: 14px;
+  margin-top: 40px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  nav {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #ccc;
+  }
+
+  main {
+    margin-top: 20px;
+  }
+
+  .resultado-linha {
+    flex-direction: column;
+  }
+
+  .tabelas-lado-a-lado {
+    flex-direction: column;
+  }
+
+  nav ul ul {
+    padding-left: 0;
+  }
+}
+
+/* Estilo exclusivo da página Home */
+main.home {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+main.home h2 {
+  font-size: 2rem;
+  color: #004aad;
+  margin-bottom: 20px;
+}
+
+main.home h3 {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+  color: #003070;
+}
+
+main.home p {
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+
+main.home ul {
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+main.home ul li {
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+/* Informações técnicas da Home */
+main.home ul li strong {
+  color: #222;
+}
+
+main.home hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 40px 0;
+}
+
+/* Rodapé institucional */
+.home-footer {
+  text-align: center;
+  margin-top: 40px;
+  font-style: italic;
+  color: #555;
 }
