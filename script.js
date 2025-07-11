@@ -1,4 +1,5 @@
-
+import { mostrarDescontos } from './js/calculoEncargos.js';
+import { mostrarFerias } from './js/calculoFerias.js';
 
   const botaocetidoes = document.getElementById("botao-certidoes");
   const listacertidoes = document.getElementById("lista-certidoes");
@@ -20,3 +21,15 @@
   botaoCalculos.addEventListener("click", () => {
     listacalculos.classList.toggle("escondido");
   });
+
+
+
+document.getElementById("link-descontos").addEventListener("click", (e) => {
+  e.preventDefault();
+  mostrarDescontos();
+});
+
+document.getElementById("link-beneficios").addEventListener("click", (e) => {
+  e.preventDefault();
+  mostrarFerias();
+});
