@@ -54,7 +54,7 @@ export function mostrarDescontos() {
         </div>
 
         <div class="campo">
-          <label for="quantidade-filhos">Quantidade de filhos:</label>
+          <label for="quantidade-filhos">Quantidade de filhos: (Até 14 anos)</label>
           <input type="number" id="quantidade-filhos" min="0" value="0">
         </div>
       </div>

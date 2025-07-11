@@ -22,7 +22,7 @@ export function mostrarFerias() {
         </div>
 
         <div class="campo">
-          <label for="dias-vendidos">Dias vendidos (máx 10):</label>
+          <label for="dias-vendidos">Dias vendidos:</label>
           <input type="number" id="dias-vendidos" min="0" max="10" value="0">
         </div>
       </div>
@@ -59,19 +59,15 @@ export function mostrarFerias() {
     }
 
     const diasDeDireito = calcularDiasDeDireito(faltas);
+    const limiteVenda = Math.floor(diasDeDireito / 3); // 1/3 legal
 
     if (diasGozados < 5 || diasGozados > 30) {
       alert("Você só pode gozar entre 5 e 30 dias de férias.");
       return;
     }
 
-    if (diasVendidos > 10) {
-      alert("Você só pode vender no máximo 10 dias de férias.");
-      return;
-    }
-
-    if (diasGozados + diasVendidos > 30) {
-      alert("A soma de dias gozados e vendidos não pode passar de 30.");
+    if (diasVendidos > limiteVenda) {
+      alert(`Você só pode vender até ${limiteVenda} dias com base no seu direito de ${diasDeDireito} dias.`);
       return;
     }
 
@@ -83,12 +79,16 @@ export function mostrarFerias() {
     }
 
     const valorDia = salario / 30;
+
     const valorFerias = valorDia * diasGozados;
-    const adicionalUmTerco = valorFerias / 3;
-    const totalFerias = valorFerias + adicionalUmTerco;
+    const adicionalUmTercoFerias = valorFerias / 3;
+    const totalFerias = valorFerias + adicionalUmTercoFerias;
 
     const valorVenda = valorDia * diasVendidos;
-    const totalReceber = totalFerias + valorVenda;
+    const adicionalUmTercoVenda = valorVenda / 3;
+    const totalVenda = valorVenda + adicionalUmTercoVenda;
+
+    const totalReceber = totalFerias + totalVenda;
 
     document.getElementById("resultado-ferias").innerHTML = `
       <div class="resumo-box">
@@ -97,14 +97,16 @@ export function mostrarFerias() {
         <p><strong>Dias de direito:</strong> ${diasDeDireito}</p>
         <p><strong>Dias gozados:</strong> ${diasGozados}</p>
         <p><strong>Valor base:</strong> R$ ${valorFerias.toFixed(2)}</p>
-        <p><strong>Adicional 1/3:</strong> R$ ${adicionalUmTerco.toFixed(2)}</p>
+        <p><strong>Adicional 1/3:</strong> R$ ${adicionalUmTercoFerias.toFixed(2)}</p>
         <p><strong>Total férias:</strong> R$ ${totalFerias.toFixed(2)}</p>
       </div>
 
       <div class="resumo-box">
         <h4>💵 Venda de Férias</h4>
-        <p><strong>Dias vendidos:</strong> ${diasVendidos}</p>
-        <p><strong>Valor:</strong> R$ ${valorVenda.toFixed(2)}</p>
+        <p><strong>Dias vendidos:</strong> ${diasVendidos} (máximo legal: ${limiteVenda})</p>
+        <p><strong>Valor base:</strong> R$ ${valorVenda.toFixed(2)}</p>
+        <p><strong>Adicional 1/3:</strong> R$ ${adicionalUmTercoVenda.toFixed(2)}</p>
+        <p><strong>Total venda:</strong> R$ ${totalVenda.toFixed(2)}</p>
       </div>
 
       <div class="resumo-box destaque">
