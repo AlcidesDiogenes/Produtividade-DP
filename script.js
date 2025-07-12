@@ -63,3 +63,10 @@ document.getElementById("link-adicionais").addEventListener("click", function (e
   e.preventDefault();
   mostrarAdicionais();
 });
+
+import { mostrarSumarioLegislacao } from './js/legislacao.js';
+
+document.getElementById("link-legislacao").addEventListener("click", (e) => {
+  e.preventDefault();
+  mostrarSumarioLegislacao();
+});

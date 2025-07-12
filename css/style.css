@@ -362,3 +362,55 @@ form button[type="submit"]:hover {
 .linha.extra-noturna .campo {
   min-width: 150px;
 }
+
+.sumario-legislacao {
+  list-style: none;
+  padding-left: 0;
+}
+
+.sumario-legislacao li {
+  margin: 10px 0;
+}
+
+.sumario-legislacao a {
+  text-decoration: none;
+  color: #004aad;
+  font-weight: bold;
+}
+
+.sumario-legislacao a:hover {
+  text-decoration: underline;
+}
+
+details {
+  margin-bottom: 15px;
+  background: #f9f9f9;
+  border-left: 4px solid #004aad;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+details summary {
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.subitens-legislacao {
+  list-style: none;
+  padding-left: 15px;
+  margin-top: 10px;
+}
+
+.subitens-legislacao li {
+  margin: 5px 0;
+}
+
+.subitens-legislacao a {
+  color: #004aad;
+  text-decoration: none;
+}
+
+.subitens-legislacao a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,105 @@
+/* Estrutura geral */
+body {
+  font-family: 'Georgia', serif;
+  background-color: #fefefe;
+  color: #333;
+  margin: 40px;
+  line-height: 1.6;
+}
+
+/* Títulos principais */
+h1 {
+  font-size: 2.4em;
+  margin-bottom: 0.5em;
+  text-align: center;
+  color: #1a1a1a;
+}
+
+/* Títulos de seções */
+h2 {
+  font-size: 1.8em;
+  margin-top: 2em;
+  color: #003366;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 4px;
+}
+
+/* Títulos de subseções */
+h3 {
+  font-size: 1.4em;
+  margin-top: 1.5em;
+  color: #005580;
+}
+
+/* Parágrafos */
+p {
+  margin: 0.8em 0;
+  text-align: justify;
+}
+
+/* Sumário */
+ol {
+  padding-left: 1.5em;
+  margin-bottom: 2em;
+}
+
+ol li {
+  margin: 0.3em 0;
+}
+
+/* Listas */
+ul {
+  margin-left: 1.5em;
+  margin-bottom: 1em;
+}
+
+ul li {
+  margin: 0.3em 0;
+}
+
+/* Links de navegação */
+a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Ênfase */
+strong {
+  font-weight: bold;
+  color: #000;
+}
+
+/* Impressão */
+@media print {
+  body {
+    color: #000;
+    background: none;
+  }
+
+  h1, h2, h3 {
+    color: #000;
+    page-break-after: avoid;
+  }
+
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+
+  ol, ul {
+    page-break-inside: avoid;
+  }
+
+  p, ul li, ol li {
+    orphans: 3;
+    widows: 3;
+  }
+
+  @page {
+    margin: 2cm;
+  }
+}
