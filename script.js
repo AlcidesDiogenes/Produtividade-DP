@@ -56,3 +56,10 @@ document.getElementById("sindicatoCeara").addEventListener("click", function (e)
   e.preventDefault();
   mostrarSindicatosFortaleza();
 });
+
+import { mostrarAdicionais } from './js/calculoAdicionais.js';
+
+document.getElementById("link-adicionais").addEventListener("click", function (e) {
+  e.preventDefault();
+  mostrarAdicionais();
+});
